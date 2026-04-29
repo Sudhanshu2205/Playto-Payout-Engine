@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# Django
+db.sqlite3
+staticfiles/
+# Keep migrations but ignore their bytecode
+backend/ledger/migrations/__pycache__/
+
+# Node
+node_modules/
+.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

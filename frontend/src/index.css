@@ -1,0 +1,325 @@
+/* Global styles for the Playto Payout Dashboard */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ---- Layout ---- */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1e2330;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f8fafc;
+  letter-spacing: -0.3px;
+}
+
+.app-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ---- Merchant Selector ---- */
+.merchant-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.merchant-selector label {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.merchant-selector select {
+  background: #1a1f2e;
+  border: 1px solid #2d3348;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 14px;
+  padding: 8px 14px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.merchant-selector select:focus {
+  border-color: #6366f1;
+}
+
+/* ---- Cards row ---- */
+.balance-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.balance-card {
+  background: #1a1f2e;
+  border: 1px solid #2d3348;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.balance-card-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.balance-card-amount {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f8fafc;
+  letter-spacing: -0.5px;
+}
+
+.balance-card-amount.success { color: #4ade80; }
+.balance-card-amount.warning { color: #fbbf24; }
+.balance-card-amount.info    { color: #60a5fa; }
+
+.balance-card-sub {
+  font-size: 12px;
+  color: #475569;
+  margin-top: 4px;
+}
+
+/* ---- Two column layout ---- */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .main-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Panels ---- */
+.panel {
+  background: #1a1f2e;
+  border: 1px solid #2d3348;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.panel-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Payout Form ---- */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  background: #0f1117;
+  border: 1px solid #2d3348;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  border-color: #6366f1;
+}
+
+.form-input::placeholder { color: #475569; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 18px;
+  transition: all 0.15s;
+  font-family: inherit;
+  width: 100%;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5558e3;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  background: #374151;
+  color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---- Alerts ---- */
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.alert-success { background: #052e16; color: #4ade80; border: 1px solid #166534; }
+.alert-error   { background: #2d0f0f; color: #f87171; border: 1px solid #7f1d1d; }
+
+/* ---- Status badges ---- */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-pending    { background: #1e2d40; color: #60a5fa; }
+.badge-processing { background: #2d2208; color: #fbbf24; }
+.badge-completed  { background: #052e16; color: #4ade80; }
+.badge-failed     { background: #2d0f0f; color: #f87171; }
+
+/* ---- Tables ---- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+  padding: 8px 10px;
+  border-bottom: 1px solid #1e2330;
+}
+
+tbody tr {
+  border-bottom: 1px solid #1a1f2e;
+  transition: background 0.1s;
+}
+
+tbody tr:hover { background: #1e2433; }
+tbody tr:last-child { border-bottom: none; }
+
+tbody td {
+  padding: 10px 10px;
+  color: #cbd5e1;
+}
+
+.text-credit { color: #4ade80; }
+.text-debit  { color: #f87171; }
+
+/* ---- Spinner ---- */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #374151;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- Empty states ---- */
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: #475569;
+  font-size: 13px;
+}
+
+/* ---- Full width panel ---- */
+.panel-full {
+  background: #1a1f2e;
+  border: 1px solid #2d3348;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* ---- Polling indicator ---- */
+.poll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.poll-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
