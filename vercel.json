@@ -6,9 +6,8 @@
       "framework": "vite"
     },
     "backend": {
-      "root": "backend",
-      "routePrefix": "/_/backend",
-      "entrypoint": "api/index.py"
+      "entrypoint": "backend/payout_engine/wsgi.py",
+      "routePrefix": "/_/backend"
     }
   },
   "rewrites": [
