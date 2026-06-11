@@ -109,10 +109,14 @@ REST_FRAMEWORK = {
     ],
 }
 
-# CORS - allow the React dev server
+# CORS - allow the React dev server and Vercel production deployments
 CORS_ALLOWED_ORIGINS = [
     os.getenv('FRONTEND_URL', 'http://localhost:5173'),
     'http://localhost:3000',
+]
+# Allow any *.vercel.app subdomain for Vercel preview/production deployments
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r'^https://.*\.vercel\.app$',
 ]
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # in dev, allow everything
 
